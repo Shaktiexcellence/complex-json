@@ -9,6 +9,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List<MaterialColor> _color = [
+    Colors.indigo,
+    Colors.amber,
+    Colors.purple,
+    Colors.deepOrange
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +34,7 @@ class _HomeState extends State<Home> {
           child: ListView.builder(
             itemCount: widget.listOf.length,
             itemBuilder: (BuildContext context, int index) {
+              MaterialColor mcolor = _color[index % _color.length];
               return Card(
                 elevation: 10,
                 margin: EdgeInsets.all(10),
@@ -37,6 +44,8 @@ class _HomeState extends State<Home> {
                       padding: const EdgeInsets.all(8),
                       child: CircleAvatar(
                         child: Text(widget.listOf[index]["id"].toString()[0]),
+                        backgroundColor: mcolor,
+                        foregroundColor: Colors.white,
                       ),
                     ),
                     Container(
