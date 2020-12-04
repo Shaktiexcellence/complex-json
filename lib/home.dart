@@ -9,12 +9,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  
   List<MaterialColor> _color = [
     Colors.indigo,
     Colors.amber,
     Colors.purple,
     Colors.deepOrange
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
